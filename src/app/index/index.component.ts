@@ -6,6 +6,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class IndexComponent implements OnInit {
   @Output() public indexEvent = new EventEmitter();
+  @Output() public indexEvent1 = new EventEmitter();
 
   constructor() {}
   ngOnInit(): void {}
@@ -20,5 +21,6 @@ export class IndexComponent implements OnInit {
 
   logout() {
     this.indexEvent.emit(false);
+    this.indexEvent1.emit(false);
   }
 }

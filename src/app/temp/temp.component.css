@@ -46,3 +46,24 @@ td {
   overflow-y: hidden;
   overflow-x: scroll;
 }
+
+.button-style {
+  width: 140px;
+  font-size: 24px;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.bg-image {
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

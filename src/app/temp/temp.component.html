@@ -1,0 +1,55 @@
+<div
+  box
+  fxLayout="row wrap"
+  fxLayout.xs="column"
+  fxLayoutAlign="space-around center"
+  fxLayoutGap="25px"
+>
+  <mat-card
+    ngFor="let member of members"
+    fxFlex="calc(33%-25px)"
+    fxFlex.sm="calc(50%-25px)"
+    class="centered example-card mat-elevation-z4"
+  >
+    <mat-card-header style="justify-content: center">
+      <mat-card-title><h1>Staff Login</h1></mat-card-title>
+    </mat-card-header>
+    <img
+      mat-card-image
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Caduceus.svg/1200px-Caduceus.svg.png"
+      alt="Photo of a Shiba Inu"
+    />
+    <mat-card-content>
+      <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Username</mat-label>
+          <input type="text" matInput [formControl]="username" />
+          <mat-error *ngIf="username.hasError('required')">
+            Enter the <strong>username</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input
+            type="password"
+            matInput
+            [type]="hide ? 'password' : 'text'"
+            [formControl]="password"
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+          <mat-error *ngIf="password.hasError('required')">
+            Enter the <strong>password</strong>
+          </mat-error>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

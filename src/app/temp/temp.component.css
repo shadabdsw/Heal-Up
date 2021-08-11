@@ -1,0 +1,48 @@
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+td {
+  padding-right: 8px;
+}
+
+.mat-card-image {
+  background-size: cover;
+}
+
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.content {
+  padding: 16px;
+}
+
+.content > mat-card {
+  width: 200px;
+}
+
+.box {
+  border: 1px solid #222;
+  width: 300px;
+  height: 300px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}

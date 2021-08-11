@@ -21,6 +21,10 @@ import { BackButtonDisableModule } from 'angular-disable-browser-back-button';
 import { PatientService } from './services/patient.service';
 import { ViewrecordComponent } from './viewrecord/viewrecord.component';
 import { MatSortModule } from '@angular/material/sort';
+import { TempComponent } from './temp/temp.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -30,6 +34,7 @@ import { MatSortModule } from '@angular/material/sort';
     IndexComponent,
     routingComponents,
     ViewrecordComponent,
+    TempComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +51,9 @@ import { MatSortModule } from '@angular/material/sort';
     MatListModule,
     MatSortModule,
     MatTableModule,
+    MatButtonModule,
+    MatInputModule,
+    MatCardModule,
     BackButtonDisableModule.forRoot({ preserveScrollPosition: true }),
   ],
   providers: [PatientService],

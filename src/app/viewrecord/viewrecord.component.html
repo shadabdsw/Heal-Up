@@ -1,0 +1,82 @@
+<h1>Patient Records</h1>
+
+<div style="background-color: whitesmoke">
+  <table class="table table-striped table-hover table-bordered border-primary">
+    <thead>
+      <tr>
+        <th>Sr No</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Email Address</th>
+        <th>Phone Number</th>
+        <th>Patient Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of patients; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td (dblclick)="deleteItem($event, p)">{{ p.firstName }}</td>
+        <td>{{ p.lastName }}</td>
+        <td>{{ p.age }}</td>
+        <td>{{ p.gender }}</td>
+        <td>{{ p.emailAddress }}</td>
+        <td>{{ p.phoneNumber }}</td>
+        <td>{{ p.patientType }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="firstName">
+    <th mat-header-cell *matHeaderCellDef>First Name</th>
+    <td mat-cell *matCellDef="let element">{{ element.firstName }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="lastName">
+    <th mat-header-cell *matHeaderCellDef>Last Name</th>
+    <td mat-cell *matCellDef="let element">{{ element.lastName }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="age">
+    <th mat-header-cell *matHeaderCellDef>Age</th>
+    <td mat-cell *matCellDef="let element">{{ element.age }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="gender">
+    <th mat-header-cell *matHeaderCellDef>Gender</th>
+    <td mat-cell *matCellDef="let element">{{ element.gender }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="emailAddress">
+    <th mat-header-cell *matHeaderCellDef>Email Address</th>
+    <td mat-cell *matCellDef="let element">{{ element.emailAdress }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="phoneNumber">
+    <th mat-header-cell *matHeaderCellDef>Phone Number</th>
+    <td mat-cell *matCellDef="let element">{{ element.phoneNumber }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="patientType">
+    <th mat-header-cell *matHeaderCellDef>Patient Type</th>
+    <td mat-cell *matCellDef="let element">{{ element.patientType }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr
+    mat-row
+    (click)="clickedRows.add(row)"
+    [class.demo-row-is-clicked]="clickedRows.has(row)"
+    *matRowDef="let row; columns: displayedColumns"
+  ></tr>
+</table>
+<mat-paginator
+  [pageSizeOptions]="[5, 10, 20]"
+  showFirstLastButtons
+  aria-label="Select page of periodic elements"
+>
+</mat-paginator> -->

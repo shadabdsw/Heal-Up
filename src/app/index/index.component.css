@@ -1,0 +1,27 @@
+mat-sidenav-container {
+  height: 100%;
+}
+
+mat-sidenav,
+mat-sidenav-content {
+  padding: 16px;
+}
+
+mat-sidenav {
+  background-color: lightsteelblue;
+  width: 230px;
+}
+
+.active-link {
+  color: darkslateblue !important;
+  font-weight: bold !important;
+}
+
+.btn:hover {
+  background-color: darkslateblue;
+  color: whitesmoke;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}

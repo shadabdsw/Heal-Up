@@ -1,0 +1,157 @@
+<section class="vh-100" style="background-color: cornflowerblue">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div
+          class="card shadow-2-strong card-registration"
+          style="border-radius: 16spx"
+        >
+          <div class="card-body p-4 p-md-5">
+            <h1 style="text-align: center; margin-bottom: 50px">
+              Patient Registration Form
+            </h1>
+
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label" for="firstName">First Name</label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      formControlName="firstName"
+                      class="form-control form-control-lg"
+                      placeholder="Enter Patient's First Name"
+                    />
+                    <div class="invalid-feedback">
+                      <div>First Name is required!</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label" for="lastName">Last Name</label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      formControlName="lastName"
+                      class="form-control form-control-lg"
+                      placeholder="Enter Patient's Last Name"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 d-flex align-items-center">
+                  <div class="form-outline">
+                    <label for="Age" class="form-label">Age</label>
+                    <input
+                      type="number"
+                      formControlName="age"
+                      class="form-control form-control-lg"
+                      id="age"
+                      placeholder="Enter Patient's Age"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                  <label for="gender" class="form-label">Gender</label>
+                  <br />
+                  <div class="form-check form-check-inline">
+                    <label class="form-check-label" for="femaleGender">
+                      <input
+                        type="radio"
+                        formControlName="gender"
+                        name="gender"
+                        value="Female"
+                        id="femaleGender"
+                      />
+                      Female</label
+                    >
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <label class="form-check-label" for="maleGender">
+                      <input
+                        type="radio"
+                        formControlName="gender"
+                        name="gender"
+                        value="Male"
+                        id="maleGender"
+                      />
+                      Male</label
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+                    <label class="form-label" for="emailAddress">Email</label>
+                    <input
+                      type="email"
+                      id="emailAddress"
+                      formControlName="emailAddress"
+                      class="form-control form-control-lg"
+                      placeholder="Enter Patient's Email Address"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+                    <label class="form-label" for="phoneNumber"
+                      >Phone Number</label
+                    >
+                    <input
+                      type="number"
+                      formControlName="phoneNumber"
+                      id="phoneNumber"
+                      class="form-control form-control-lg"
+                      placeholder="Enter Patient's Phone Number"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+                    <label class="form-label" for="patientType"
+                      >Type of Patient</label
+                    ><br />
+                    <select
+                      style="color: slategrey"
+                      class="select form-control-lg btn-block"
+                      id="patientType"
+                      formControlName="patientType"
+                    >
+                      <option value="" hidden selected>Patient Type</option>
+                      <option value="OPD">OPD</option>
+                      <option value="IPD">IPD</option>
+                      <option value="Emergency">Emergency</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4 pt-2">
+                <button
+                  [disabled]="!registerForm.valid"
+                  type="submit"
+                  class="btn btn-primary btn-primary-lg btn-block"
+                  style="margin: 0 auto"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

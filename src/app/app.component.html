@@ -1,0 +1,16 @@
+<!-- <app-viewrecord></app-viewrecord> -->
+<!-- <app-index></app-index> -->
+<!-- <app-register></app-register> -->
+<!-- <app-login></app-login> -->
+
+<!-- working -->
+
+<ng-container *ngIf="isLoggedIn; else isLoggedOut">
+  <app-index (indexEvent)="isLoggedIn = $event"></app-index>
+</ng-container>
+
+<ng-template #isLoggedOut>
+  <app-login (loginEvent)="isLoggedIn = $event"></app-login>
+</ng-template>
+
+<!-- <router-outlet></router-outlet> -->

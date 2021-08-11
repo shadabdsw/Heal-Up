@@ -1,0 +1,66 @@
+<div
+  class="container justify-content-center"
+  style="width: 400px; margin-left: auto; margin-right: auto"
+>
+  <!-- #USERNAME -->
+  <form class="form-container" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h1 style="text-align: center">Staff Login</h1>
+    <div class="input-group">
+      <span class="input-group-text">
+        <mat-icon>person</mat-icon>
+      </span>
+      <input
+        type="text"
+        id="username"
+        formControlName="username"
+        class="form-control"
+        placeholder="enter username"
+      />
+    </div>
+    <!-- #PASSWORD -->
+    <div class="input-group" style="margin-top: 5px">
+      <span class="input-group-text">
+        <mat-icon>vpn_key</mat-icon>
+      </span>
+      <input
+        id="password"
+        type="password"
+        class="form-control"
+        formControlName="password"
+        placeholder="enter password"
+      />
+    </div>
+    <button
+      style="margin-top: 5px"
+      type="submit"
+      [disabled]="!loginForm.valid"
+      class="btn btn-success btn-block"
+    >
+      Login
+    </button>
+  </form>
+
+  <div class="card mb-3" style="max-width: 540px">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img
+          src="http://www.dailyrounds.org/blog/wp-content/uploads/2015/05/caduceus.jpg"
+          class="img-fluid rounded-start"
+          alt="..."
+        />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">
+            This is a wider card with supporting text below as a natural lead-in
+            to additional content. This content is a little bit longer.
+          </p>
+          <p class="card-text">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

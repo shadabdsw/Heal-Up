@@ -67,3 +67,13 @@ td {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.flex-container {
+  display: flex;
+  background-color: transparent;
+}
+
+.flex-container > div {
+  background-color: transparent;
+  font-size: 30px;
+}

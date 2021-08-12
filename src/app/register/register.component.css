@@ -8,6 +8,14 @@
   top: 13px;
 }
 
-h3 {
+h1 {
+  color: black;
   text-align: center;
+  font-weight: 900;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.font-fam {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

@@ -2,6 +2,19 @@ table {
   width: 100%;
 }
 
+thead,
+th,
+tr {
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+
+tbody {
+  background-color: whitesmoke;
+  color: black;
+}
+
 .mat-row .mat-cell {
   border-bottom: 1px solid transparent;
   border-top: 1px solid transparent;
@@ -23,4 +36,8 @@ table {
 
 h1 {
   color: black;
+  text-align: center;
+  font-weight: 900;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }

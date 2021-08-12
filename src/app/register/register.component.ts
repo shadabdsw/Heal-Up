@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
     lastName: new FormControl('', Validators.required),
     age: new FormControl('', [Validators.required, Validators.maxLength(2)]),
     gender: new FormControl('', Validators.required),
-    emailAddress: new FormControl('', Validators.required),
+    emailAddress: new FormControl('', [Validators.required, Validators.email]),
     phoneNumber: new FormControl('', [
       Validators.required,
       Validators.maxLength(10),
@@ -45,6 +45,7 @@ export class RegisterComponent implements OnInit {
     this.patientSvc.addPatient(patient).then(
       (r) => {
         this.snackBar.open('Data Added Successfully!', '', { duration: 2000 });
+        this.registerForm.reset();
       },
       (err) => {
         this.snackBar.open('Operation Failed!', '', { duration: 2000 });

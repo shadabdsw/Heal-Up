@@ -1,28 +1,10 @@
-<mat-toolbar style="background-color: #e3cab8">
+<mat-toolbar>
   <button class="btn" (click)="sidenav.toggle()">
     <i class="fa fa-bars"></i>
   </button>
-
-  <h1
-    style="
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-      font-weight: 900;
-      margin-left: 10px;
-      color: black;
-    "
-  >
-    Hospital Management System
-  </h1>
-
+  <h1>Hospital Management System</h1>
   <span class="example-spacer"></span>
-
-  <button
-    style="font-family: Verdana, Geneva, Tahoma, sans-serif"
-    class="btn"
-    (click)="logout()"
-  >
-    Logout
-  </button>
+  <button class="btn button-logout" (click)="logout()">Logout</button>
 </mat-toolbar>
 
 <mat-sidenav-container>
@@ -50,10 +32,10 @@
       >
         View Patient Details
       </a>
-      <!-- <a mat-list-item routerLinkActive="active-link"> Discharge Patient </a> -->
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content style="background-color: antiquewhite">
+  <mat-sidenav-content>
+    <!-- router-outlet is changing the content between registration and viewing  -->
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

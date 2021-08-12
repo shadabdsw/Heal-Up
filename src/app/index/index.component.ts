@@ -5,22 +5,19 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./index.component.css'],
 })
 export class IndexComponent implements OnInit {
-  @Output() public indexEvent = new EventEmitter();
+  //creating event to send data from Index (child) to App (parent)
   @Output() public indexEvent1 = new EventEmitter();
 
   constructor() {}
   ngOnInit(): void {}
 
+  //logging the state of sidenav (was not used)
   log(state: any) {
-    console.log(state);
-
-    if (state == 'Opened') {
-    } else {
-    }
+    //console.log(state);
   }
 
   logout() {
-    this.indexEvent.emit(false);
+    //emitting data from Index (child) to App (parent) on click logout button
     this.indexEvent1.emit(false);
   }
 }

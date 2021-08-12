@@ -71,7 +71,7 @@ import { PatientService } from '../services/patient.service';
 })
 export class ViewrecordComponent implements OnInit {
   patients: Patient[] = [];
-  selectedPatient!: Patient;
+  selectedPatient!: Patient; //to store details of selected Patient as Patient Object
 
   // @ViewChild(MatPaginator) paginator!: MatPaginator;
   // @ViewChild(MatSort) sort!: MatSort;
@@ -96,17 +96,17 @@ export class ViewrecordComponent implements OnInit {
   // }
 
   constructor(public patientSvc: PatientService) {
-    //when using Promise
-    // this.patientSvc.getAll().then(
-    //   (r) => {
-    //     this.patients = r;
-    //   },
-    //   (err) => {
-    //     console.log(err);
-    //   }
-    // );
+    /* when using Promise getting all Patient details
+    this.patientSvc.getAll().then(
+      (r) => {
+        this.patients = r;
+      },
+      (err) => {
+        console.log(err);
+      }
+    ); */
 
-    //using Observable getting all data
+    //using Observable getting all data and showing on table
     this.patientSvc.getAllPatientRecords().subscribe(
       (r: any) => {
         this.patients = r;
@@ -117,19 +117,22 @@ export class ViewrecordComponent implements OnInit {
     );
   }
 
+  //get Patient's details on single click as Object
   onSelect(p: Patient) {
-    console.log(p);
+    //console.log(p);
     this.selectedPatient = p;
   }
 
+  //delete Patient on double click event
   deleteItem(event: any, p: Patient) {
-    this.patientSvc.deleteItem(p);
-    console.log('delete item is running');
+    this.patientSvc.deletePatient(p);
+    //console.log('delete item is running');
   }
 
   ngOnInit() {
-    this.patientSvc.getPatients()?.subscribe(pats => {
-      console.log(pats);
+    //gets all documents on load as it is in ngOnInIt
+    this.patientSvc.getPatients()?.subscribe((pats) => {
+      //console.log(pats);
       this.patients = pats;
     });
   }

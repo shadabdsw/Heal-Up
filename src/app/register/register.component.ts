@@ -42,6 +42,7 @@ export class RegisterComponent implements OnInit {
       patientType: data.patientType,
     };
 
+    //on click Submit button - add new patient data to DB
     this.patientSvc.addPatient(patient).then(
       (r) => {
         this.snackBar.open('Data Added Successfully!', '', { duration: 2000 });

@@ -22,8 +22,9 @@ export class TempComponent implements OnInit {
 
   onSubmit() {
     if (
-      (document.getElementById('username') as HTMLInputElement).value == 'a' &&
-      (document.getElementById('password') as HTMLInputElement).value == 'a'
+      (document.getElementById('username') as HTMLInputElement).value ==
+        'admin' &&
+      (document.getElementById('password') as HTMLInputElement).value == 'admin'
     ) {
       this.loginEvent1.emit(true);
       this.snackBar.open('Login Successful!', '', { duration: 2000 });

@@ -8,6 +8,7 @@
   top: 13px;
 }
 
+/* heading1 styles */
 h1 {
   color: black;
   text-align: center;
@@ -16,6 +17,18 @@ h1 {
     "Lucida Sans", Arial, sans-serif;
 }
 
+/* changing font for all labels */
 .font-fam {
+  font-size: 20px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.card-style {
+  background-color: white;
+  border-color: black;
+}
+
+.input-style {
+  font-size: 20px;
+  border-color: black;
 }

@@ -8,3 +8,5 @@ export interface Patient {
   phoneNumber: number;
   patientType: string;
 }
+
+//Patient model

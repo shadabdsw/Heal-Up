@@ -6,6 +6,9 @@ import {
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Patient } from '../models/patient';
+import { map } from 'rxjs/operators'; 
+
+
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +18,22 @@ export class PatientService {
   patientDoc?: AngularFirestoreDocument<Patient>;
   patients?: Observable<Patient[]>;
 
-  constructor(public afs: AngularFirestore) {}
+  constructor(public afs: AngularFirestore) {
+    // getting document ID
+    this.patients = this.afs.collection('patients')
+    .snapshotChanges()
+    .pipe(
+      map(
+      changes => {
+        return changes.map(a => {
+          const data = a.payload.doc.data() as Patient;
+          data.id = a.payload.doc.id;
+          console.log(data.id);
+          return data;
+        })
+      })
+    );
+  }
 
   //when using Promise
   // getAll(): Promise<Patient[]> {
@@ -36,6 +54,10 @@ export class PatientService {
   //       });
   //   });
   // }
+
+  getPatients() {
+    return this.patients;
+  }
 
   getAllPatientRecords() {
     //using Observable
@@ -82,10 +104,25 @@ export class PatientService {
   }
 
   deleteItem(patient: Patient) {
-    // return this.afs.collection('patients').doc(patient.id).delete();
     this.patientDoc = this.afs.doc(`patients/${patient.id}`);
-    console.log(this.afs.doc(`patients/${patient.id}`));
     this.patientDoc.delete();
-    console.log('delete patient is running');
   }
+
+  // deletePatient(patient: Patient) {
+  //   patient;
+  //   console.log(
+  //     this.afs
+  //       .collection('patients')
+  //       .get()
+  //       .subscribe((r) => {
+  //         const dat = [];
+  //         console.log(
+  //           r.docs.forEach((doc) => {
+  //             doc.data();
+  //             dat.push(doc);
+  //           })
+  //         );
+  //       })
+  //   );
+  // }
 }

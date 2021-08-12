@@ -22,7 +22,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let p of patients; let i = index">
+      <tr *ngFor="let p of patients; let i = index" (click)="onSelect(p)">
         <th scope="row">{{ i + 1 }}</th>
         <td (dblclick)="deleteItem($event, p)">{{ p.firstName }}</td>
         <td>{{ p.lastName }}</td>

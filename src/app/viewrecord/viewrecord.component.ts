@@ -71,6 +71,7 @@ import { PatientService } from '../services/patient.service';
 })
 export class ViewrecordComponent implements OnInit {
   patients: Patient[] = [];
+  selectedPatient!: Patient;
 
   // @ViewChild(MatPaginator) paginator!: MatPaginator;
   // @ViewChild(MatSort) sort!: MatSort;
@@ -105,7 +106,7 @@ export class ViewrecordComponent implements OnInit {
     //   }
     // );
 
-    //using Observable
+    //using Observable getting all data
     this.patientSvc.getAllPatientRecords().subscribe(
       (r: any) => {
         this.patients = r;
@@ -116,10 +117,20 @@ export class ViewrecordComponent implements OnInit {
     );
   }
 
+  onSelect(p: Patient) {
+    console.log(p);
+    this.selectedPatient = p;
+  }
+
   deleteItem(event: any, p: Patient) {
     this.patientSvc.deleteItem(p);
     console.log('delete item is running');
   }
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    this.patientSvc.getPatients()?.subscribe(pats => {
+      console.log(pats);
+      this.patients = pats;
+    });
+  }
 }

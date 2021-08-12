@@ -8,18 +8,20 @@ mat-sidenav-content {
 }
 
 mat-sidenav {
-  background-color: lightsteelblue;
+  background-color: #fdf2cd;
   width: 230px;
 }
 
 .active-link {
-  color: darkslateblue !important;
+  color: black !important;
   font-weight: bold !important;
 }
 
 .btn:hover {
   background-color: darkslateblue;
-  color: whitesmoke;
+  color: white;
+  border-width: 1px;
+  border-color: black;
 }
 
 .example-spacer {

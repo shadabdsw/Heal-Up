@@ -25,7 +25,6 @@ import { TempComponent } from './temp/temp.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { TempoComponent } from './tempo/tempo.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +35,6 @@ import { TempoComponent } from './tempo/tempo.component';
     routingComponents,
     ViewrecordComponent,
     TempComponent,
-    TempoComponent,
   ],
   imports: [
     BrowserModule,

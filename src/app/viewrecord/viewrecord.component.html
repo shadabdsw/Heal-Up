@@ -7,33 +7,46 @@
 
 <!-- the above 4 lines are written to bring the table towards the center of the page -->
 
-<div class="table-responsive">
-  <table class="table table-striped table-hover table-bordered">
-    <thead>
-      <tr>
-        <th>Sr No</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Age</th>
-        <th>Gender</th>
-        <th>Email Address</th>
-        <th>Phone Number</th>
-        <th>Patient Type</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let p of patients; let i = index" (click)="onSelect(p)">
-        <th scope="row">{{ i + 1 }}</th>
-        <td (dblclick)="deleteItem($event, p)">{{ p.firstName }}</td>
-        <td>{{ p.lastName }}</td>
-        <td>{{ p.age }}</td>
-        <td>{{ p.gender }}</td>
-        <td>{{ p.emailAddress }}</td>
-        <td>{{ p.phoneNumber }}</td>
-        <td>{{ p.patientType }}</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="flex">
+  <mat-card style="border-radius: 8px" class="mat-elevation-z10">
+    <div class="table-responsive">
+      <table class="table table-striped table-hover table-bordered">
+        <thead>
+          <tr>
+            <th>Sr No</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Email Address</th>
+            <th>Phone Number</th>
+            <th>Patient Type</th>
+            <th style="text-align: center">X</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of patients; let i = index" (click)="onSelect(p)">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ p.firstName }}</td>
+            <td>{{ p.lastName }}</td>
+            <td>{{ p.age }}</td>
+            <td>{{ p.gender }}</td>
+            <td>{{ p.emailAddress }}</td>
+            <td>{{ p.phoneNumber }}</td>
+            <td>{{ p.patientType }}</td>
+            <td (click)="deleteItem($event, p)">
+              <button
+                enabled
+                style="border-color: transparent; background-color: transparent"
+              >
+                <mat-icon> delete </mat-icon>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </mat-card>
 </div>
 
 <!-- </div>

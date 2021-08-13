@@ -5,6 +5,7 @@ table {
 thead,
 th,
 tr {
+  font-size: 18px;
   background-color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: black;
@@ -43,4 +44,10 @@ h1 {
   font-weight: 900;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

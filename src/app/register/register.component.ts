@@ -15,8 +15,6 @@ interface PatientType {
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  myGenderModel = 0;
-  myPatientModel = 0;
 
   // registerForm = new FormGroup({
   //   firstName: new FormControl('', Validators.required),

@@ -52,6 +52,15 @@ td {
   font-size: 24px;
   padding: 8px;
   margin-bottom: 8px;
+  color: white;
+  background-color: black;
+}
+
+.button-style:hover {
+  background-color: darkslateblue;
+  color: white;
+  border-width: 1px;
+  border-color: black;
 }
 
 .bg-image {

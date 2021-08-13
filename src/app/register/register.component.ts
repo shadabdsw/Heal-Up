@@ -81,10 +81,10 @@ export class RegisterComponent implements OnInit {
       firstName: this.firstName.value,
       lastName: this.lastName.value,
       age: this.age.value,
-      gender: this.myGenderModel.toString(),
+      gender: this.gender.value,
       emailAddress: this.email.value,
       phoneNumber: this.phone.value,
-      patientType: this.myPatientModel.toString(),
+      patientType: this.patientType.value,
     };
 
     this.patientSvc.addPatient(patient1).then(

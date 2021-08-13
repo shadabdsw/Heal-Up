@@ -52,11 +52,11 @@ h1 {
 
 .button-style {
   width: 140px;
+  height: 60px;
   font-size: 24px;
   padding: 8px;
   margin-bottom: 8px;
   color: white;
-  background-color: black;
 }
 
 /* .button-style:hover {

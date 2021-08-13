@@ -1,14 +1,7 @@
 <h1>Patient Registration Form</h1>
 <div class="flex">
   <mat-card
-    style="
-      border-top-right-radius: 16px;
-      border-top-left-radius: 16px;
-      border-bottom-left-radius: 16px;
-      border-bottom-right-radius: 16px;
-      width: 800px;
-      padding: 32px;
-    "
+    style="border-radius: 32px; width: 800px; padding: 32px"
     class="mat-elevation-z10"
   >
     <mat-card-content>
@@ -111,8 +104,9 @@
           <td>
             <mat-form-field appearance="outline" class="example-full-width">
               <mat-label style="font-size: 24px">Patient Type</mat-label>
-              <mat-select style="font-size: 28px" [(ngModel)]="myPatientModel">
+              <mat-select [formControl]="patientType" style="font-size: 28px">
                 <mat-option
+                  id="patientType"
                   *ngFor="let patienttype of patienttypes"
                   [value]="patienttype.value"
                 >
@@ -124,27 +118,58 @@
         </tr>
         <tr>
           <td>
-            <div style="text-align: center">
-              <mat-radio-group
-                aria-label="Select an option"
-                [(ngModel)]="myGenderModel"
-              >
-                <!-- <mat-label style="font-size: 16px">Gender </mat-label> -->
+            <mat-radio-group
+              [formControl]="gender"
+              aria-label="Select an option"
+            >
+              <!-- <mat-label style="font-size: 16px">Gender </mat-label> -->
 
-                <mat-radio-button
-                  style="font-size: 24px"
-                  color="primary"
-                  value="Male"
-                  >Male</mat-radio-button
-                >
-                <mat-radio-button
-                  style="font-size: 24px"
-                  color="primary"
-                  value="Female"
-                  >Female</mat-radio-button
-                >
-              </mat-radio-group>
-            </div>
+              <mat-radio-button
+                style="font-size: 24px"
+                color="primary"
+                value="Male"
+                >Male</mat-radio-button
+              >
+              <mat-radio-button
+                style="font-size: 24px"
+                color="primary"
+                value="Female"
+                >Female</mat-radio-button
+              >
+              <mat-radio-button
+                style="font-size: 24px"
+                color="primary"
+                value="Other"
+                >Other</mat-radio-button
+              >
+            </mat-radio-group>
+          </td>
+          <td>
+            <mat-radio-group
+              [formControl]="gender"
+              aria-label="Select an option"
+            >
+              <!-- <mat-label style="font-size: 16px">Gender </mat-label> -->
+
+              <mat-radio-button
+                style="font-size: 24px; visibility: hidden"
+                color="primary"
+                value="Male"
+                >Male</mat-radio-button
+              >
+              <mat-radio-button
+                style="font-size: 24px; visibility: hidden"
+                color="primary"
+                value="Female"
+                >Female</mat-radio-button
+              >
+              <mat-radio-button
+                style="font-size: 24px; visibility: hidden"
+                color="primary"
+                value="Other"
+                >Other</mat-radio-button
+              >
+            </mat-radio-group>
           </td>
         </tr>
       </table>
@@ -157,8 +182,19 @@
           mat-raised-button
           color="primary"
           (click)="onRegister()"
+          class="button-style"
           type="submit"
-          [disabled]="!(firstName.valid && lastName.valid)"
+          [disabled]="
+            !(
+              firstName.valid &&
+              lastName.valid &&
+              age.valid &&
+              phone.valid &&
+              email.valid &&
+              gender.valid &&
+              patientType.valid
+            )
+          "
         >
           Register
         </button>

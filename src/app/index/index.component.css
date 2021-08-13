@@ -15,7 +15,7 @@ mat-sidenav-content {
 mat-sidenav {
   padding: 16px;
   background-color: #E3EBFF;
-  width: 230px;
+  width: 300px;
 }
 
 /* heading1 style changes */
@@ -37,7 +37,7 @@ h1 {
   background-color: darkblue;
   color: white;
   border-width: 1px;
-  border-color: black;
+  border-color: white;
 }
 
 /* send logout button to extreme right  */

@@ -25,6 +25,9 @@ import { TempComponent } from './temp/temp.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatOptionModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -54,6 +57,9 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule,
     MatInputModule,
     MatCardModule,
+    MatOptionModule,
+    MatRadioModule,
+    MatSelectModule,
     BackButtonDisableModule.forRoot({ preserveScrollPosition: true }),
   ],
   providers: [PatientService],

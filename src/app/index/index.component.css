@@ -1,5 +1,5 @@
 mat-toolbar {
-  background-color: #e3cab8;
+  background-color: #2136BF;
 }
 
 mat-sidenav-container {
@@ -7,14 +7,14 @@ mat-sidenav-container {
 }
 
 mat-sidenav-content {
-  background-color: antiquewhite;
+  background-color: #BDCCFF;
   padding: 16px;
 }
 
 /* style for sidenav */
 mat-sidenav {
   padding: 16px;
-  background-color: #fdf2cd;
+  background-color: #E3EBFF;
   width: 230px;
 }
 
@@ -23,7 +23,7 @@ h1 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 900;
   margin-left: 10px;
-  color: black;
+  color: white;
 }
 
 /* for the active option on sidenav */
@@ -34,7 +34,7 @@ h1 {
 
 /* menu and logout button */
 .btn:hover {
-  background-color: darkslateblue;
+  background-color: darkblue;
   color: white;
   border-width: 1px;
   border-color: black;

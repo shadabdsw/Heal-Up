@@ -51,16 +51,16 @@
       <mat-card-content>
         <form>
           <mat-form-field appearance="outline" class="example-full-width">
-            <mat-label style="font-size: 16px">Username</mat-label>
+            <mat-label style="font-size: 16px">Email</mat-label>
             <input
               style="font-size: 16px"
               type="text"
-              id="username1"
+              id="email1"
               matInput
-              [formControl]="username"
+              [formControl]="email"
             />
-            <mat-error *ngIf="username.hasError('required')">
-              Enter the <strong>username</strong>
+            <mat-error *ngIf="email.hasError('required')">
+              Enter the <strong>email</strong>
             </mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline" class="example-full-width">
@@ -96,7 +96,7 @@
               class="button-style"
               (click)="onSubmit()"
               type="submit"
-              [disabled]="!(username.valid && password.valid)"
+              [disabled]="!(email.valid && password.valid)"
             >
               Login
             </button>

@@ -11,10 +11,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class TempComponent implements OnInit {
   @Output() public loginEvent1 = new EventEmitter();
 
-  username = new FormControl('', [Validators.required]);
+  email = new FormControl('', [Validators.required]);
   password = new FormControl('', [Validators.required]);
 
-  // username1 = (document.getElementById('username1') as HTMLInputElement).value;
+  // email1 = (document.getElementById('email1') as HTMLInputElement).value;
   // password1 = (document.getElementById('password1') as HTMLInputElement).value;
 
   hide = true;
@@ -25,7 +25,7 @@ export class TempComponent implements OnInit {
 
   onSubmit() {
     // if (
-    //   (document.getElementById('username') as HTMLInputElement).value ==
+    //   (document.getElementById('email') as HTMLInputElement).value ==
     //     'admin' &&
     //   (document.getElementById('password') as HTMLInputElement).value == 'admin'
     // ) {
@@ -36,7 +36,7 @@ export class TempComponent implements OnInit {
     // }
 
     this.auth
-      .signInWithEmailAndPassword(this.username.value, this.password.value)
+      .signInWithEmailAndPassword(this.email.value, this.password.value)
       .then((res) => {
         if (res) {
           this.loginEvent1.emit(true);

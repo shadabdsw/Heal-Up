@@ -1,5 +1,5 @@
 mat-toolbar {
-  background-color: #2136BF;
+  background-color: black;
 }
 
 mat-sidenav-container {
@@ -7,14 +7,14 @@ mat-sidenav-container {
 }
 
 mat-sidenav-content {
-  background-color: #BDCCFF;
+  background-color: white;
   padding: 16px;
 }
 
 /* style for sidenav */
 mat-sidenav {
   padding: 16px;
-  background-color: #E3EBFF;
+  background-color: gainsboro;
   width: 300px;
 }
 

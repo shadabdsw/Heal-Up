@@ -1,6 +1,7 @@
 import { ViewChild, AfterViewInit } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { Patient } from '../models/patient';
@@ -95,7 +96,7 @@ export class ViewrecordComponent implements OnInit {
   //   this.dataSource.sort = this.sort;
   // }
 
-  constructor(public patientSvc: PatientService) {
+  constructor(public patientSvc: PatientService, public snackBar: MatSnackBar) {
     /* when using Promise getting all Patient details
     this.patientSvc.getAll().then(
       (r) => {
@@ -126,6 +127,7 @@ export class ViewrecordComponent implements OnInit {
   //delete Patient on double click event
   deleteItem(event: any, p: Patient) {
     this.patientSvc.deletePatient(p);
+    this.snackBar.open('Data Deletion Successful!', '', { duration: 2000 });
     //console.log('delete item is running');
   }
 

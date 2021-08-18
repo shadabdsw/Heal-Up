@@ -56,12 +56,12 @@ td {
   background-color: black;
 }
 
-.button-style:hover {
+/* .button-style:hover {
   background-color: darkslateblue;
   color: white;
   border-width: 1px;
   border-color: black;
-}
+} */
 
 .bg-image {
   /* Add the blur effect */
